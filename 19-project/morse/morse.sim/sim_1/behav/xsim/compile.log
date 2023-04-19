@@ -1,0 +1,4 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/marek/Desktop/DE projekt/DE1-projekt/09-project/morse/morse.srcs/sources_1/new/inputM.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'inputM'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/marek/Desktop/DE projekt/DE1-projekt/09-project/morse/morse.srcs/sim_1/new/tb_inputM.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'tb_inputM'
