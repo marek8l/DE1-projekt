@@ -18,19 +18,19 @@
 
 <a name="objectives"></a>
 
-## Project objectives
+## Theoretical description and explanation
 
 Náším cílem bylo sestrojit přijímač a vysílač morseovy abecedy. Při vypracovávání přijímače jsme použili tlačítko na generování morseova kódu.Nejtěžší částí bylo vytvořit část programu, který rozeznal, jestli se jedná o čárku, tečku nebo mezeru mezi znaky či slovy. Dále bylo nutné rozhodnout jak dlouhé bude slovo, které přijímáme. Toto slovo poté ukládáme do registru, který se resetuje s každým novým slovem. Nakonec je pomocí naší části "decoder" převeden morseův kód na abecedu a poté zobrazen na 7 segmentovém displeji. Při řešení přijímače byl podobný problém, bylo zapotřebí navzorkovat příchozí signál a dále rozhodnout, o které slovo se jedná a dále jej zobrazit pomocí LED diody nebo 7 segmentového displeje.
 
 <a name="hardware"></a>
 
-## Hardware description
+## Hardware description of demo application
 Celý projekt je zabalen v hlavní bloku "top", kde jsou definovány všechny používané, jak vnější tak vnitřní signály. Náš první blok zvaný "inputM", slouží k získání dat z tlačítka BTNC, kde posíláme jedničky a nuly. Jedno stisknutí tlačítka by mělo odpovídat tečce, což je časový interval 1 sekundy. Delší stiknutí, čas delší jak 2 sekundy, je registrován jako čárka. Dále je také rozhodnuto, na základě stavů, jak dlouhé bude výsledné slovo. Následující blok "char_registr" slouží jako naše paměť, kde se na základě délce slova přizpůsobí jeho velikost a daná data se uloží.V poslední bloku nazvaném "decoder", dochází k porovnání dat z naší paměti. Na základě znaků a délce slova se přiřadí požadované písmenko, toto písmenko je poté vyvedeno na 7 segmentový displej, kde uvidíme výsledek našeho vysílaného slova po znacích.
 
 
 <a name="modules"></a>
 
-## VHDL modules description and simulations
+## Software description
 
 Modul "inputM"
 Celý modul je ovládaný pomocí náběžné hrany, program rozhoduje na základě toho, jestli je tlačítko stisknuto nebo ne. Pokuď stisknuto není, počítá se počet 0 v proměné zero_cnt, na základě této hodnoty se rozhoduje, jestli se jedná o mezeru mezi písmeny nebo mezi slovy. Také se resetuje počet 1 v proměné one_cnt. Proces počítání nul se spustí pouze, pokuď je předtím stiknuto tlačítko BTNC, čímž se nastaví enable na 1 a program začne počítat 0. Pokuď je tlačítko stisknuto, dojde k nastavení enable na hodnotu high a začne počítání jedniček.Pokuď se one_cnt rovná 1, program ví, že se jedná o tečku a  proměná char je nastavena na 0, což reprezentuje právě tečku. Nastane-li situace, že one_cnt je větší jako 2, program ví, že se jedná o čárku, ta je značená v proměné char jako 1. U všech rozhodování,zda-li se jedná o tečku,čárku nebo mezeru se přičítá hodnota k proměné lenght, ta určuje délku slova.   
@@ -106,13 +106,13 @@ end Behavioral;
 ```
 <a name="top"></a>
 
-## TOP module description and simulations
+## Component(s) simulation
 
 Write your text here.
 
 <a name="video"></a>
 
-## Video
+## Instructions
 
 Write your text here
 
