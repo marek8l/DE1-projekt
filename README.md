@@ -121,6 +121,31 @@ end Behavioral;
 Simulace "inpurM"
 ![alt text](https://github.com/marek8l/DE1-projekt/blob/main/transmitter%20inputM%20simulace.PNG)
 
+Modul "char_registr"
+```vhdl
+char_register_process : process (clk) is
+
+  begin
+      if (rising_edge(clk)) then
+   
+         if (enable = '1') then 
+            for i in 0 to 2 loop
+               temp(i) <= temp(i+1);
+            end loop;
+            temp(3) <= char;
+         end if;
+         
+      letter_in <= temp;
+      
+      end if;
+         
+   end process char_register_process;
+
+end Behavioral;
+```
+Simulace "char_registr"
+![alt text](https://github.com/marek8l/DE1-projekt/blob/main/transmitter%20inputM%20simulace.PNG)
+
 <a name="video"></a>
 
 ## Instructions
