@@ -2,10 +2,10 @@
 
 ### Team members
 
-* Marek IVAN (responsible for xxx)
-* Petr KAPLAN (responsible for xxx)
-* Miroslav TRCHALÍK (responsible for xxx)
-* Vít Walach (responsible for xxx)
+* Marek IVAN 
+* Petr KAPLAN 
+* Miroslav TRCHALÍK 
+* Vít Walach 
 
 ### Table of contents
 
