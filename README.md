@@ -122,7 +122,7 @@ Simulace "inpurM"
 ![alt text](https://github.com/marek8l/DE1-projekt/blob/main/transmitter%20inputM%20simulace.PNG)
 
 Modul "char_registr"
-Tento modul funguje jako naše paměť, je to 4-vstupý shift registr. Proces začíná náběžnou hranou , kde se pomocí proměnné  enable nastaví zapnutí funkce paměti. poté se do proměnné temp ukládají 1 a 0 reprezentující naše čárky a tečky. Proměnná temp se posouvá o temp(i+1), podle délky slova. Poté dojde k uložení dat do proměnné letter_in, kde je zapsáno celý znak. Ten je poslán do dalšího module zvaný "decoder".
+Tento modul funguje jako naše paměť, je to 4-vstupý shift registr. Proces začíná náběžnou hranou , kde se pomocí proměnné  enable nastaví zapnutí funkce paměti. poté se do proměnné temp ukládají 1 a 0 reprezentující naše čárky a tečky.Ukládání probíhá z pravé strany registru. Proměnná temp se posouvá o temp(i+1), podle délky slova. Poté dojde k uložení dat do proměnné letter_in, kde je zapsáno celý znak.Ten je poslán do dalšího module zvaný "decoder".
 ```vhdl
 char_register_process : process (clk) is
 
@@ -148,7 +148,12 @@ Simulace "char_registr"
 ![alt text](https://github.com/marek8l/DE1-projekt/blob/main/char_register%20simulace.PNG)
 
 Modul "decoder"
+V tomto bloku programu nám příchází data ze signálu letter_in. Na základě délky signálu je  rozdělen do  jednoho ze čtyř částí programu, pokuď má délku 1 je mu přidělena kombinace "01", poté přejde do další podmínky, kde zjistí,jestli třetí bit vstupu je 0, pokuď ano, jedná se o písemo E, jinak se  jedná o písmeno F.Pokuď 2 získá kombinaci "10", v tomto případě opět zjistí co se nachází na pozici 3, dále co je na pozici 2, následně rozhodne  o které z písmen se jedná. Tento proces se opakuje, jak pro písmena dílky 3 tak délky 4. Po určení písemna je písmenu přiřazena binární hodnota pro zobrazení na 7 segmentovém displeji. Tuto informací vynášíme na 7 segmentový displej pomocí výstupního signálu letter_out.
 
+
+
+
+, při 3 "11" a při 4 "00".
 ```vhdl
 d_process : process (clk) is
 
