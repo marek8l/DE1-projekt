@@ -1,4 +1,4 @@
-# YOUR_PROJECT_TITLE
+# Morse code transmitter and receiver
 
 ### Team members
 
