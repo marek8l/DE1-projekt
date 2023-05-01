@@ -150,10 +150,6 @@ Simulace "char_registr"
 Modul "decoder"
 V tomto bloku programu nám příchází data ze signálu letter_in. Na základě délky signálu je  rozdělen do  jednoho ze čtyř částí programu, pokuď má délku 1 je mu přidělena kombinace "01", poté přejde do další podmínky, kde zjistí,jestli třetí bit vstupu je 0, pokuď ano, jedná se o písemo E, jinak se  jedná o písmeno F.Pokuď 2 získá kombinaci "10", v tomto případě opět zjistí co se nachází na pozici 3, dále co je na pozici 2, následně rozhodne  o které z písmen se jedná. Tento proces se opakuje, jak pro písmena dílky 3 tak délky 4. Po určení písemna je písmenu přiřazena binární hodnota pro zobrazení na 7 segmentovém displeji. Tuto informací vynášíme na 7 segmentový displej pomocí výstupního signálu letter_out.
 
-
-
-
-, při 3 "11" a při 4 "00".
 ```vhdl
 d_process : process (clk) is
 
@@ -251,6 +247,9 @@ d_process : process (clk) is
     end process d_process;
 end architecture Behavioral;
 ```
+Simulace "decoder"
+![alt text](https://github.com/marek8l/DE1-projekt/blob/main/decoder%20simulace.PNG)
+
 
 <a name="video"></a>
 
