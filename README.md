@@ -30,10 +30,7 @@ Celý projekt je zabalen v hlavní bloku "top", kde jsou definovány všechny po
 ![alt text](https://github.com/marek8l/DE1-projekt/blob/main/de1.jpg)
 ```diff
 - text in red
-+ text in green
-! text in orange
-# text in gray
-@@ text in purple (and bold)@@
+ahoj
 ```
 <a name="modules"></a>
 
