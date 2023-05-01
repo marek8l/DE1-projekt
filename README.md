@@ -147,6 +147,9 @@ end Behavioral;
 Simulace "char_registr"
 ![alt text](https://github.com/marek8l/DE1-projekt/blob/main/char_register%20simulace.PNG)
 
+Modul "decoder"
+
+
 <a name="video"></a>
 
 ## Instructions
