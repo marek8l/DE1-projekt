@@ -118,7 +118,7 @@ end process inputM_process;
 end Behavioral;
 ```
 
-Simulace "inpurM"
+Simulace "inputM"
 ![alt text](https://github.com/marek8l/DE1-projekt/blob/main/transmitter%20inputM%20simulace.PNG)
 
 Modul "char_registr"
@@ -252,7 +252,7 @@ Simulace "decoder"
 
 Modul "top"
 
-Modul "top" je hlavní částí celého projektu, jsou pod ním sloučené a definované veškeré předchozí moduly. Jako vstup máme naše tlačítko BTNC a jako výstup námi vybraný 7 segment a jeho jednotlivé segmenty.
+Modul "top" je hlavní částí celého projektu, jsou pod ním sloučené a definované veškeré předchozí moduly. Jako vstup máme naše tlačítko BTNC,clock a jako výstup námi vybraný 7 segment a jeho jednotlivé segmenty.
 ```vhdl
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
