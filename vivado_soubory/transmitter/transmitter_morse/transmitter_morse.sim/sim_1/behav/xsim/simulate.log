@@ -1,0 +1,11 @@
+Time resolution is 1 ps
+Error: Test case 1 failed
+Time: 10 ns  Iteration: 0  Process: /test_char_register/stim_proc  File: C:/Users/marek/Desktop/DE_final_v/transmitter_morse/transmitter_morse.srcs/sim_1/new/tb_char_register.vhd
+Error: Test case 2 failed
+Time: 20 ns  Iteration: 0  Process: /test_char_register/stim_proc  File: C:/Users/marek/Desktop/DE_final_v/transmitter_morse/transmitter_morse.srcs/sim_1/new/tb_char_register.vhd
+Error: Test case 3 failed
+Time: 30 ns  Iteration: 0  Process: /test_char_register/stim_proc  File: C:/Users/marek/Desktop/DE_final_v/transmitter_morse/transmitter_morse.srcs/sim_1/new/tb_char_register.vhd
+Error: Test case 4 failed
+Time: 40 ns  Iteration: 0  Process: /test_char_register/stim_proc  File: C:/Users/marek/Desktop/DE_final_v/transmitter_morse/transmitter_morse.srcs/sim_1/new/tb_char_register.vhd
+Error: Test case 5 failed
+Time: 50 ns  Iteration: 0  Process: /test_char_register/stim_proc  File: C:/Users/marek/Desktop/DE_final_v/transmitter_morse/transmitter_morse.srcs/sim_1/new/tb_char_register.vhd

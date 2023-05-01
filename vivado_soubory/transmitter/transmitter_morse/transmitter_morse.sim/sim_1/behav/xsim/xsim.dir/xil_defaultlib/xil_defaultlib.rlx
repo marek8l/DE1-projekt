@@ -1,0 +1,10 @@
+0.7
+2020.2
+Oct 14 2022
+05:20:55
+C:/Users/marek/Desktop/DE_final_v/transmitter_morse/transmitter_morse.srcs/sim_1/new/tb_char_register.vhd,1682961082,vhdl,,,,test_char_register,,,,,,,,
+C:/Users/marek/Desktop/DE_final_v/transmitter_morse/transmitter_morse.srcs/sim_1/new/tb_decoder.vhd,1682961352,vhdl,,,,decoder_tb,,,,,,,,
+C:/Users/marek/Desktop/DE_final_v/transmitter_morse/transmitter_morse.srcs/sim_1/new/tb_inputM.vhd,1682960297,vhdl,,,,inputm_tb,,,,,,,,
+C:/Users/marek/Desktop/DE_final_v/transmitter_morse/transmitter_morse.srcs/sources_1/new/char_register.vhd,1682960929,vhdl,,,,char_register,,,,,,,,
+C:/Users/marek/Desktop/DE_final_v/transmitter_morse/transmitter_morse.srcs/sources_1/new/decoder.vhd,1682961244,vhdl,,,,decoder,,,,,,,,
+C:/Users/marek/Desktop/DE_final_v/transmitter_morse/transmitter_morse.srcs/sources_1/new/inputM.vhd,1682960270,vhdl,,,,inputm,,,,,,,,

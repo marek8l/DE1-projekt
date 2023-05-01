@@ -1,0 +1,7 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../transmitter_morse.srcs/sources_1/new/char_register.vhd" \
+"../../../../transmitter_morse.srcs/sim_1/new/tb_char_register.vhd" \
+
+# Do not sort compile order
+nosort
