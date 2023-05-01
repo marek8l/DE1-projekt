@@ -33,7 +33,7 @@ Celý projekt je zabalen v hlavní bloku "top", kde jsou definovány všechny po
 ## VHDL modules description and simulations
 
 Modul "inputM"
-
+Celý modul je ovládaný pomocí náběžné hrany, program rozhoduje na základě toho, jestli je tlačítko stisknuto nebo ne. Pokuď stisknuto není, počítá se počet 0 v proměné zero_cnt, na základě této hodnoty se rozhoduje, jestli se jedná o mezeru mezi písmeny nebo mezi slovy. Také se resetuje počet 1 v proměné one_cnt. Proces počítání nul se spustí pouze, pokuď je předtím stiknuto tlačítko BTNC, čímž se nastavi enable na 1 a program začne počítat 0. Pokuď je tlačítko stisknuto, dojde k nastavení enable na hodnoti high a začne počítání
 ```vhdl
 inputM_process : process (clk) is
 
