@@ -20,7 +20,7 @@
 
 ## Project objectives
 
-Write your text here.
+Náším cílem bylo sestrojit přijímač a vysílač morseovy abecedy. Přijímač jsme sestrojili jako 4 bloky.
 
 <a name="hardware"></a>
 
