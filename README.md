@@ -33,7 +33,7 @@ Celý projekt je zabalen v hlavní bloku "top", kde jsou definovány všechny po
 ## VHDL modules description and simulations
 
 Modul "inputM"
-Celý modul je ovládaný pomocí náběžné hrany, program rozhoduje na základě toho, jestli je tlačítko stisknuto nebo ne. Pokuď stisknuto není, počítá se počet 0 v proměné zero_cnt, na základě této hodnoty se rozhoduje, jestli se jedná o mezeru mezi písmeny nebo mezi slovy. Také se resetuje počet 1 v proměné one_cnt. Proces počítání nul se spustí pouze, pokuď je předtím stiknuto tlačítko BTNC, čímž se nastavi enable na 1 a program začne počítat 0. Pokuď je tlačítko stisknuto, dojde k nastavení enable na hodnoti high a začne počítání
+Celý modul je ovládaný pomocí náběžné hrany, program rozhoduje na základě toho, jestli je tlačítko stisknuto nebo ne. Pokuď stisknuto není, počítá se počet 0 v proměné zero_cnt, na základě této hodnoty se rozhoduje, jestli se jedná o mezeru mezi písmeny nebo mezi slovy. Také se resetuje počet 1 v proměné one_cnt. Proces počítání nul se spustí pouze, pokuď je předtím stiknuto tlačítko BTNC, čímž se nastavi enable na 1 a program začne počítat 0. Pokuď je tlačítko stisknuto, dojde k nastavení enable na hodnotu high a začne počítání jedniček.Pokuď se one_cnt rovná 1, program ví, že se jedná o tečkua  proměná char je nastavena na 0, což reprezentuje právě tečku. Nastane-li situace, že one_cnt je větší jako 2, program ví, že se jedná o čárku, ta je značená v proměné char jako 1. U všech rozhodování,zda-li se jedná o tečku,čárku nebo mezeru se přičítá hodnota k proměné lenght, ta určuje délku slova.   
 ```vhdl
 inputM_process : process (clk) is
 
