@@ -122,6 +122,7 @@ Simulace "inpurM"
 ![alt text](https://github.com/marek8l/DE1-projekt/blob/main/transmitter%20inputM%20simulace.PNG)
 
 Modul "char_registr"
+Tento modul funguje jako naše paměť, je to 4-vstupý shift registr. Proces začíná náběžnou hranou , kde se pomocí proměnné  enable nastaví zapnutí funkce paměti. poté se do proměnné temp ukládají 1 a 0 reprezentující naše čárky a tečky. Proměnná temp se posouvá o temp(i+1), podle délky slova. Poté dojde k uložení dat do proměnné letter_in, kde je zapsáno celý znak. Ten je poslán do dalšího module zvaný "decoder".
 ```vhdl
 char_register_process : process (clk) is
 
@@ -144,7 +145,7 @@ char_register_process : process (clk) is
 end Behavioral;
 ```
 Simulace "char_registr"
-![alt text](https://github.com/marek8l/DE1-projekt/blob/main/transmitter%20inputM%20simulace.PNG)
+![alt text](https://github.com/marek8l/DE1-projekt/blob/main/char_register%20simulace.PNG)
 
 <a name="video"></a>
 
