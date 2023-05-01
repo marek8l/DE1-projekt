@@ -21,6 +21,10 @@
 ## Theoretical description and explanation
 
 Náším cílem bylo sestrojit přijímač a vysílač morseovy abecedy. Při vypracovávání přijímače jsme použili tlačítko na generování morseova kódu.Nejtěžší částí bylo vytvořit část programu, který rozeznal, jestli se jedná o čárku, tečku nebo mezeru mezi znaky či slovy. Dále bylo nutné rozhodnout jak dlouhé bude slovo, které přijímáme. Toto slovo poté ukládáme do registru, který se resetuje s každým novým slovem. Nakonec je pomocí naší části "decoder" převeden morseův kód na abecedu a poté zobrazen na 7 segmentovém displeji. Při řešení přijímače byl podobný problém, bylo zapotřebí navzorkovat příchozí signál a dále rozhodnout, o které slovo se jedná a dále jej zobrazit pomocí LED diody nebo 7 segmentového displeje.
+```diff
+- text in red
+upravit popis  přijímače
+```
 
 <a name="hardware"></a>
 
@@ -30,7 +34,7 @@ Celý projekt je zabalen v hlavní bloku "top", kde jsou definovány všechny po
 ![alt text](https://github.com/marek8l/DE1-projekt/blob/main/de1.jpg)
 ```diff
 - text in red
-ahoj
+dopsat a nakreslit receiver
 ```
 <a name="modules"></a>
 
