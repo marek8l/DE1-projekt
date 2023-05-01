@@ -118,6 +118,9 @@ end process inputM_process;
 end Behavioral;
 ```
 
+Simulace "inpurM"
+![alt text](https://github.com/marek8l/DE1-projekt/blob/main/transmitter%20inputM%20simulace.PNG)
+
 <a name="video"></a>
 
 ## Instructions
