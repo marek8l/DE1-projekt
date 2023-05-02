@@ -30,7 +30,7 @@ Vysílač: Celý projekt je zabalen v hlavní bloku "top", kde jsou definovány 
 
 ![alt text](https://github.com/marek8l/DE1-projekt/blob/main/de1.jpg)
 
-Přijímač: Celý projekt je opět zabalen v hlavním bloku "top", tady opět definujeme všechny používané signály. Jedinný rozdíl je v našem první bloku "receiver", zde příchází jedničky a nuly signálem DIN, modul poté rozezná, jestli se jedná o tečky nebo čárky, také zjišťuje délku posílaného slova. Tyto znaky následně pošle do bloku "char_registr", který slouží jako naše paměť(shift regiter),poté přejde do modulu "decoder", kde dojde k rozpoznání písmena na základě počtu jednotlivých znaků a délce slova. Tyto slova jsou následně vyvedena na 7 segmentový displej pro zobrazení.
+Přijímač: Celý projekt je opět zabalen v hlavním bloku "top", tady opět definujeme všechny používané signály. Jedinný rozdíl je v našem první bloku "receiver", zde příchází jedničky a nuly signálem DIN, modul poté rozezná, jestli se jedná o tečky nebo čárky a také zjišťuje délku posílaného slova. Tyto znaky následně pošle do bloku "char_registr", který slouží jako naše paměť(shift regiter), poté přejde do modulu "decoder", kde dojde k rozpoznání písmena na základě počtu jednotlivých znaků a délce slova. Tyto slova jsou následně vyvedena na 7 segmentový displej pro zobrazení.
 ![alt text](https://github.com/marek8l/DE1-projekt/blob/main/Receiver.jpg)
 
 <a name="software"></a>
@@ -50,7 +50,7 @@ https://github.com/marek8l/DE1-projekt/blob/main/vivado_soubory/transmitter/tran
 ## Component(s) simulation
 
 Modul "inputM"
-Celý modul je ovládaný pomocí náběžné hrany, program rozhoduje na základě toho, jestli je tlačítko stisknuto nebo ne. Pokuď stisknuto není, počítá se počet 0 v proměné zero_cnt, na základě této hodnoty se rozhoduje, jestli se jedná o mezeru mezi písmeny nebo mezi slovy. Také se resetuje počet 1 v proměné one_cnt. Proces počítání nul se spustí pouze, pokuď je předtím stiknuto tlačítko BTNC, čímž se nastaví enable na 1 a program začne počítat 0. Pokuď je tlačítko stisknuto, dojde k nastavení enable na hodnotu high a začne počítání jedniček.Pokuď se one_cnt rovná 1, program ví, že se jedná o tečku a  proměná char je nastavena na 0, což reprezentuje právě tečku. Nastane-li situace, že one_cnt je větší jako 2, program ví, že se jedná o čárku, ta je značená v proměné char jako 1. U všech rozhodování,zda-li se jedná o tečku,čárku nebo mezeru se přičítá hodnota k proměné lenght, ta určuje délku slova.   
+Celý modul je ovládaný pomocí náběžné hrany, program rozhoduje na základě toho, jestli je tlačítko stisknuto nebo ne. Pokud stisknuto není, počítá se počet 0 v proměnné zero_cnt, na základě této hodnoty se rozhoduje, jestli se jedná o mezeru mezi písmeny nebo mezi slovy. Také se resetuje počet 1 v proměné one_cnt. Proces počítání nul se spustí pouze, pokud je předtím stiknuto tlačítko BTNC, čímž se nastaví enable na 1 a program začne počítat 0. Pokud je tlačítko stisknuto, dojde k nastavení enable na hodnotu high a začne počítání jedniček.Pokud se one_cnt rovná 1, program ví, že se jedná o tečku a proměná char je nastavena na 0, což reprezentuje právě tečku. Nastane-li situace, že one_cnt je větší než 2, program ví, že se jedná o čárku, ta je značená v proměnné char jako 1. U všech rozhodování, zda-li se jedná o tečku, čárku nebo mezeru se přičítá hodnota k proměnné length, ta určuje délku slova.   
 ```vhdl
 inputM_process : process (clk) is
 
@@ -126,7 +126,7 @@ Simulace "inputM"
 ![alt text](https://github.com/marek8l/DE1-projekt/blob/main/transmitter%20inputM%20simulace.PNG)
 
 Modul "char_registr"
-Tento modul funguje jako naše paměť, je to 4-vstupý shift registr. Proces začíná náběžnou hranou , kde se pomocí proměnné  enable nastaví zapnutí funkce paměti. poté se do proměnné temp ukládají 1 a 0 reprezentující naše čárky a tečky.Ukládání probíhá z pravé strany registru. Proměnná temp se posouvá o temp(i+1), podle délky slova. Poté dojde k uložení dat do proměnné letter_in, kde je zapsáno celý znak.Ten je poslán do dalšího module zvaný "decoder".
+Tento modul funguje jako naše paměť, je to 4-vstupý shift registr. Proces začíná náběžnou hranou , kde se pomocí proměnné enable nastaví zapnutí funkce paměti. Poté se do proměnné temp ukládají 1 a 0 reprezentující naše čárky a tečky. Ukládání probíhá z pravé strany registru. Proměnná temp se posouvá o temp(i+1), podle délky slova. Poté dojde k uložení dat do proměnné letter_in, kde je zapsán celý znak. Ten je poslán do dalšího modulu zvaný "decoder".
 ```vhdl
 char_register_process : process (clk) is
 
@@ -152,7 +152,7 @@ Simulace "char_registr"
 ![alt text](https://github.com/marek8l/DE1-projekt/blob/main/char_register%20simulace.PNG)
 
 Modul "decoder"
-V tomto bloku programu nám příchází data ze signálu letter_in. Na základě délky signálu je  rozdělen do  jednoho ze čtyř částí programu, pokuď má délku 1 je mu přidělena kombinace "01", poté přejde do další podmínky, kde zjistí,jestli třetí bit vstupu je 0, pokuď ano, jedná se o písemo E, jinak se  jedná o písmeno F.Pokuď 2 získá kombinaci "10", v tomto případě opět zjistí co se nachází na pozici 3, dále co je na pozici 2, následně rozhodne  o které z písmen se jedná. Tento proces se opakuje, jak pro písmena dílky 3 tak délky 4. Po určení písemna je písmenu přiřazena binární hodnota pro zobrazení na 7 segmentovém displeji. Tuto informací vynášíme na 7 segmentový displej pomocí výstupního signálu letter_out.
+V tomto bloku programu nám přichází data ze signálu letter_in. Na základě délky signálu je rozdělen do jednoho ze čtyř částí programu, pokud má délku 1 je mu přidělena kombinace "01", poté přejde do další podmínky, kde zjistí, jestli třetí bit vstupu je 0, pokuď ano, jedná se o písemo E, jinak se jedná o písmeno F. Pokud délka 2 získá kombinaci "10", v tomto případě opět zjistí, co se nachází na pozici 3, dále co je na pozici 2 a následně rozhodne o které z písmen se jedná. Tento proces se opakuje, jak pro písmena délky 3 tak délky 4. Po určení písmena je písmenu přiřazena binární hodnota pro zobrazení na 7 segmentovém displeji. Tuto informaci vynášíme na 7 segmentový displej pomocí výstupního signálu letter_out.
 
 ```vhdl
 d_process : process (clk) is
@@ -256,7 +256,7 @@ Simulace "decoder"
 
 Modul "top"
 
-Modul "top" je hlavní částí celého projektu, jsou pod ním sloučené a definované veškeré předchozí moduly. Jako vstup máme naše tlačítko BTNC,clock a jako výstup námi vybraný 7 segment a jeho jednotlivé segmenty.
+Modul "top" je hlavní částí celého projektu, jsou pod ním sloučené a definované veškeré předchozí moduly. Jako vstup máme naše tlačítko BTNC, clock a jako výstup námi vybraný 7 segment a jeho jednotlivé segmenty.
 ```vhdl
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -329,7 +329,7 @@ end Behavioral;
 
 ## Instructions
 
-Pro spuštění funkce vysílače je třeba stiksnout tlačítko BTNC, podle délky stisknutí uživatele dojde k rozpoznání čárky a tečky. Pro požadovaný symbol tečky je třeba tlačítko krátce stisknout.Naopak pro čárku je třeba tlačítko držet alespoň 3 sekundy. Pro ukončení písmena je třeba nemačkat tlačítko po dobu 3 sekund a pro ukončení slova více jak 7 sekund. Požadovaná písmena se budou zobrazovat následně na vybraném 7 segmentovém displeji. Pro použití funkce přijímače stačí připojit zdroj dat generující písmena. Tato písemna budou následně zobrazena na 7 segmentovém displeji.
+Pro spuštění funkce vysílače je třeba stiksnout tlačítko BTNC, podle délky stisknutí uživatele dojde k rozpoznání čárky a tečky. Pro požadovaný symbol tečky je třeba tlačítko krátce stisknout. Naopak pro čárku je třeba tlačítko držet alespoň 3 sekundy. Pro ukončení písmena je třeba nemačkat tlačítko po dobu alespoň 3 sekund a pro ukončení slova více jak 7 sekund. Požadovaná písmena se budou zobrazovat následně na vybraném 7 segmentovém displeji. Pro použití funkce přijímače stačí připojit zdroj dat generující písmena. Tato písemna budou následně zobrazena na 7 segmentovém displeji.
 ![alt text](https://github.com/marek8l/DE1-projekt/blob/main/deska.jpg)
 
 <a name="references"></a>
