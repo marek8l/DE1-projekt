@@ -125,7 +125,7 @@ end Behavioral;
 Simulace "inputM"
 ![alt text](https://github.com/marek8l/DE1-projekt/blob/main/transmitter%20inputM%20simulace.PNG)
 
-Modul "char_registr"
+Modul "char_registr":
 Tento modul funguje jako naše paměť, je to 4-vstupý shift registr. Proces začíná náběžnou hranou, kde se pomocí proměnné enable nastaví zapnutí funkce paměti. Poté se do proměnné temp ukládají jedničky a nuly reprezentující naše čárky a tečky. Ukládání probíhá z pravé strany registru. Proměnná temp se posouvá o temp(i+1) podle délky slova. Poté dojde k uložení dat do proměnné letter_in, kde je zapsán celý znak. Ten je poslán do dalšího modulu zvaný "decoder".
 ```vhdl
 char_register_process : process (clk) is
@@ -151,7 +151,7 @@ end Behavioral;
 Simulace "char_registr"
 ![alt text](https://github.com/marek8l/DE1-projekt/blob/main/char_register%20simulace.PNG)
 
-Modul "decoder"
+Modul "decoder":
 V tomto bloku programu nám přichází data ze signálu letter_in. Na základě délky signálu je rozdělen do jednoho ze čtyř částí programu. Pokud má délku 1, je mu přidělena kombinace "01", poté přejde do další podmínky, kde zjistí, jestli třetí bit vstupu je 0, pokuď ano, jedná se o písemo E, jinak se jedná o písmeno F. Pokud 2 získá kombinaci "10", tak v tomto případě opět zjistí, co se nachází na pozici 3, dále co je na pozici 2 a následně rozhodne o které z písmen se jedná. Tento proces se opakuje, jak pro písmena délky 3 tak délky 4. Po určení písmena je písmenu přiřazena binární hodnota pro zobrazení na 7 segmentovém displeji. Tuto informaci vynášíme na 7 segmentový displej pomocí výstupního signálu letter_out.
 
 ```vhdl
@@ -254,7 +254,7 @@ end architecture Behavioral;
 Simulace "decoder"
 ![alt text](https://github.com/marek8l/DE1-projekt/blob/main/decoder%20simulace.PNG)
 
-Modul "top"
+Modul "top":
 
 Modul "top" je hlavní částí celého projektu, protože jsou pod ním sloučené a definované veškeré předchozí moduly. Jako vstup máme naše tlačítko BTNC, clock a jako výstup námi vybraný 7 segment a jeho jednotlivé segmenty.
 ```vhdl
