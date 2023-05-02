@@ -36,7 +36,8 @@ Přijímač: Celý projekt je opět zabalen v hlavním bloku "top", tady opět d
 <a name="software"></a>
 
 ## Software description
-Modul  "inputM" 
+Modul  "inputM"
+
 https://github.com/marek8l/DE1-projekt/blob/main/vivado_soubory/transmitter/transmitter_morse/transmitter_morse.srcs/sources_1/new/inputM.vhd
 ![alt text](https://github.com/marek8l/DE1-projekt/blob/main/inputM%20diagram.jpg)
 Modul "char_register"
