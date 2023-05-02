@@ -322,7 +322,7 @@ end Behavioral;
 
 ## Instructions
 
-Pro spuštění funkce vysílače je třeba stiksnout tlačítko BTNC, podle délky stisknutí uživatele dojde k rozpoznání čárky a tečky. Pro požadovaný symbol tečky je třeba tlačítko krátce stisknout.Naopak pro čárku je třeba tlačítko držet alespoň 3 sekundy. Pro ukončení písmena je třeba nemačkat tlačítko po dobu 3 sekund a pro ukončení slova více jak 7 sekund. Požadovaná písmena se budou zobrazovat následně na vybraném 7 segmentovém displeji. Ilustrační fotka-
+Pro spuštění funkce vysílače je třeba stiksnout tlačítko BTNC, podle délky stisknutí uživatele dojde k rozpoznání čárky a tečky. Pro požadovaný symbol tečky je třeba tlačítko krátce stisknout.Naopak pro čárku je třeba tlačítko držet alespoň 3 sekundy. Pro ukončení písmena je třeba nemačkat tlačítko po dobu 3 sekund a pro ukončení slova více jak 7 sekund. Požadovaná písmena se budou zobrazovat následně na vybraném 7 segmentovém displeji. Pro použití funkce přijímače stačí připojit zdroj dat generující písmena. Tato písemna budou následně zobrazena na 7 segmentovém displeji.
 ![alt text](https://github.com/marek8l/DE1-projekt/blob/main/deska.jpg)
 
 <a name="references"></a>
