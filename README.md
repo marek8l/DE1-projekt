@@ -59,7 +59,7 @@ https://github.com/marek8l/DE1-projekt/blob/main/vivado_soubory/transmitter/tran
 **Modul "receiver"**
 
 https://github.com/marek8l/DE1-projekt/blob/main/vivado_soubory/receiver1/receiver/receiver.srcs/sources_1/new/receiver.vhd
-![alt text](https://github.com/marek8l/DE1-projekt/blob/main/image.jpg)
+![alt text](https://github.com/marek8l/DE1-projekt/blob/main/receiver%20diagram.jpg)
 
 <a name="simulation"></a>
 
