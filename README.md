@@ -327,7 +327,76 @@ begin
   -- Connect one common anode to 3.3V
   AN <= b"1111_1110";
 ```
+Modul "receiver"
 
+```vhdl
+begin
+    process(CLK)
+    begin
+        if rising_edge(CLK) then
+        	lenght_out <= lenght;
+            -- update counter based on input bit
+            if DIN = '0' then
+                if prev_bit = '0' then
+                    count_zero <= count_zero + 1;
+                else
+                    count_zero <= 1;
+                    count_one <= 0;
+                    prev_bit <= '0';
+                end if;
+            else
+                if prev_bit = '1' then
+                    count_one <= count_one + 1;
+                else
+                    count_one <= 1;
+                    count_zero <= 0;
+                    prev_bit <= '1';
+                end if;
+            end if;
+
+            -- check conditions for DOUT
+            
+            
+            if (count_one = 1) and (tempA = '0') then
+                tempA <= '1';
+                tempB <= '0';
+                DOUT <= "00";
+                if (lenght = "11") then
+		          lenght <= "00";
+	           else
+		          lenght <= lenght + '1';
+	           end if;
+            elsif (count_one = 3)and (tempB = '0') then
+                tempA <= '0';
+                tempB <= '1';
+                DOUT <= "01";
+                if (lenght = "11") then
+		          lenght <= "00";
+	           else
+		          lenght <= lenght + '1';
+	           end if;
+	        elsif count_zero = 1 then
+	            tempA <= '0';
+                tempB <= '0';
+            elsif count_zero = 3 then
+                tempA <= '0';
+                tempB <= '0';
+                DOUT <= "10";
+                lenght <="00";
+            elsif count_zero = 5 then
+                tempA <= '0';
+                tempB <= '0';
+                DOUT <= "11";
+                lenght <="00";
+            end if;
+        end if;
+    end process;
+    
+    
+end Behavioral;
+```
+Simulace "receiver"
+![alt text](https://github.com/marek8l/DE1-projekt/blob/main/receiver%20simulace1.PNG)
 
 end Behavioral;
 
