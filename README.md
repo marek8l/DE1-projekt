@@ -49,7 +49,7 @@ https://github.com/marek8l/DE1-projekt/blob/main/vivado_soubory/transmitter/tran
 
 ## Component(s) simulation
 
-Modul "inputM"
+Modul "inputM":
 Celý modul je ovládaný pomocí náběžné hrany, program rozhoduje na základě toho, jestli je tlačítko stisknuto nebo ne. Pokud stisknuto není, počítá se počet nul v proměnné zero_cnt, na základě této hodnoty se rozhoduje, jestli se jedná o mezeru mezi písmeny nebo mezi slovy. Také se resetuje počet jedniček v proměnné one_cnt. Proces počítání nul se spustí pouze, pokud je předtím stiknuto tlačítko BTNC, čímž se nastaví enable na 1 a program začne počítat nuly. Pokud je tlačítko stisknuto, dojde k nastavení enable na hodnotu high a začne počítání jedniček. Pokud se one_cnt rovná 1, program ví, že se jedná o tečku a proměnná char je nastavena na nulu, což reprezentuje právě tečku. Nastane-li situace, že one_cnt je větší než 2, program ví, že se jedná o čárku, ta je značená v proměnné char jako 1. U všech rozhodování, zda-li se jedná o tečku, čárku nebo mezeru se přičítá hodnota k proměnné length, ta určuje délku slova.   
 ```vhdl
 inputM_process : process (clk) is
