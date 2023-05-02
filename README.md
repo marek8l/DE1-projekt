@@ -12,7 +12,7 @@
 * [Project objectives](#objectives)
 * [Hardware description](#hardware)
 * [VHDL modules description and simulations](#modules)
-* [TOP module description and simulations](#top)
+* [Software description](#Software description)
 * [Video](#video)
 * [References](#references)
 
@@ -37,8 +37,10 @@ Přijímač: Celý projekt je opět zabalen v hlavním bloku "top", tady opět d
 
 ## Software description
 
-text
-<a name="top"></a>
+![alt text](https://github.com/marek8l/DE1-projekt/blob/main/inputM%20diagram.jpg)
+![alt text](https://github.com/marek8l/DE1-projekt/blob/main/register%20diagram.jpg)
+![alt text](https://github.com/marek8l/DE1-projekt/blob/main/diagram_decoder1.png)
+<a name="Software description"></a>
 
 ## Component(s) simulation
 
