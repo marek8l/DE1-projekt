@@ -336,4 +336,6 @@ Pro spuštění funkce vysílače je třeba stiksnout tlačítko BTNC, podle dé
 
 ## References
 
-1. Write your text here.
+1. [Wikipedie](https://en.wikipedia.org/wiki/Morse_code)
+2. [Prezentace od Umair Saleem](https://www.researchgate.net/publication/305379385_Morse_code_decoder_design_in_VHDL_using_FPGA_Spartan_3E_development_kit?fbclid=IwAR3KiPaBNj1K3j-CqQdmiTTzNKr2VtFiIulZia2HUxbM795J4pD5DOYw22Y)
+3.[Stack overflaw](https://stackoverflow.com/search?q=vhdl&s=04bdfc46-5652-40c6-a734-ef150c6cb1e8)
