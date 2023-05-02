@@ -49,7 +49,7 @@ https://github.com/marek8l/DE1-projekt/blob/main/vivado_soubory/transmitter/tran
 **Modul "char_register"**
 
 https://github.com/marek8l/DE1-projekt/blob/main/vivado_soubory/transmitter/transmitter_morse/transmitter_morse.srcs/sources_1/new/char_register.vhd
-![alt text](https://github.com/marek8l/DE1-projekt/blob/main/image.jpg)
+![alt text](https://github.com/marek8l/DE1-projekt/blob/main/IMG_20230503_001826.jpg)
 
 **Modul "decoder"**
 
@@ -59,7 +59,7 @@ https://github.com/marek8l/DE1-projekt/blob/main/vivado_soubory/transmitter/tran
 **Modul "receiver"**
 
 https://github.com/marek8l/DE1-projekt/blob/main/vivado_soubory/receiver1/receiver/receiver.srcs/sources_1/new/receiver.vhd
-![alt text](https://github.com/marek8l/DE1-projekt/blob/main/receiver%20diagram.jpg)
+![alt text](https://github.com/marek8l/DE1-projekt/blob/main/IMG_20230503_001721.jpg)
 
 <a name="simulation"></a>
 
@@ -139,7 +139,7 @@ end process inputM_process;
 end Behavioral;
 ```
 
-Simulace "inputM"
+**Simulace "inputM"**
 ![alt text](https://github.com/marek8l/DE1-projekt/blob/main/transmitter%20inputM%20simulace.PNG)
 
 **Modul "char_registr":**
