@@ -328,8 +328,7 @@ begin
   AN <= b"1111_1110";
 ```
 Modul "receiver"
-Celý modul je ovládaný pomocí náběžné hrany, program rozhoduje na základě toho, příchozích jedniček a  . Také se resetuje počet jedniček v proměnné one_cnt. Proces počítání nul se spustí pouze, pokud je předtím stiknuto tlačítko BTNC, čímž se nastaví enable na 1 a program začne počítat nuly. Pokud je tlačítko stisknuto, dojde k nastavení enable na hodnotu high a začne počítání jedniček. Pokud se one_cnt rovná 1, program ví, že se jedná o tečku a proměnná char je nastavena na nulu, což reprezentuje právě tečku. Nastane-li situace, že one_cnt je větší než 2, program ví, že se jedná o čárku, ta je značená v proměnné char jako 1. U všech rozhodování, zda-li se jedná o tečku, čárku nebo mezeru se přičítá hodnota k proměnné length, ta určuje délku slova.  
-Tento modul přijímá po sobě jdoucí 1 a 0 -----------------------------------
+Celý modul je ovládaný pomocí náběžné hrany, program rozhoduje na základě příchozích jedniček a nul. Jsou zde dvě proměnné count_zero a count_one. Count_zero počítá počet po sobě jdoucích nul, pokud napočítá tři, tak se provede podmínka, která ukončí písmeno. Pokud napočítá pět nul, tak se ukončí celé slovo. Cound_one funguje obdobně, když napočítá jednu jedničku, tak podmínka vyhodnotí, že je to tečka. Pokud napočítá tři jedničky, tak se určí, že je to čárka. Tento modul také počítá počet znaků(tečky a čárky) pro rozpoznání písmen. Při mezeře mezi písmeny se vynuluje proměnná length, aby se mohlo začít počítat další písmeno. 
 
 
 ```vhdl
