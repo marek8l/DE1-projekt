@@ -38,7 +38,7 @@ Přijímač: Celý projekt je opět zabalen v hlavním bloku "top", tady opět d
 ## Software description
 
 ![alt text](https://github.com/marek8l/DE1-projekt/blob/main/inputM%20diagram.jpg)
-![alt text](https://github.com/marek8l/DE1-projekt/blob/main/register%20diagram.jpg)
+![alt text](https://github.com/marek8l/DE1-projekt/blob/main/image.jpg)
 ![alt text](https://github.com/marek8l/DE1-projekt/blob/main/diagram_decoder1.png)
 <a name="Software description"></a>
 
