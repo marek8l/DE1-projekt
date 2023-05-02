@@ -26,13 +26,13 @@ Náším cílem bylo sestrojit přijímač a vysílač morseovy abecedy. Při vy
 <a name="hardware"></a>
 
 ## Hardware description of demo application
-Celý projekt je zabalen v hlavní bloku "top", kde jsou definovány všechny používané, jak vnější tak vnitřní signály. Náš první blok zvaný "inputM", slouží k získání dat z tlačítka BTNC, kde posíláme jedničky a nuly. Jedno stisknutí tlačítka by mělo odpovídat tečce, což je časový interval 1 sekundy. Delší stiknutí, čas delší jak 2 sekundy, je registrován jako čárka. Dále je také rozhodnuto, na základě stavů, jak dlouhé bude výsledné slovo. Následující blok "char_registr" slouží jako naše paměť, kde se na základě délce slova přizpůsobí jeho velikost a daná data se uloží.V poslední bloku nazvaném "decoder", dochází k porovnání dat z naší paměti. Na základě znaků a délce slova se přiřadí požadované písmenko, toto písmenko je poté vyvedeno na 7 segmentový displej, kde uvidíme výsledek našeho vysílaného slova po znacích.
+Vysílač: Celý projekt je zabalen v hlavní bloku "top", kde jsou definovány všechny používané, jak vnější tak vnitřní signály. Náš první blok zvaný "inputM", slouží k získání dat z tlačítka BTNC, kde posíláme jedničky a nuly. Jedno stisknutí tlačítka by mělo odpovídat tečce, což je časový interval 1 sekundy. Delší stiknutí, čas delší jak 2 sekundy, je registrován jako čárka. Dále je také rozhodnuto, na základě stavů, jak dlouhé bude výsledné slovo. Následující blok "char_registr" slouží jako naše paměť, kde se na základě délce slova přizpůsobí jeho velikost a daná data se uloží.V poslední bloku nazvaném "decoder", dochází k porovnání dat z naší paměti. Na základě znaků a délce slova se přiřadí požadované písmenko, toto písmenko je poté vyvedeno na 7 segmentový displej, kde uvidíme výsledek našeho vysílaného slova po znacích.
 
 ![alt text](https://github.com/marek8l/DE1-projekt/blob/main/de1.jpg)
-```diff
-- text in red
-dopsat a nakreslit receiver
-```
+
+Přijímač: Celý projekt je opět zabalen v hlavním bloku "top", tady opět definujeme všechny používané signály. Jedinný rozdíl je v našem první bloku "receiver", zde příchází jedničky a nuly signálem DIN, modul poté rozezná, jestli se jedná o tečky nebo čárky, také zjišťuje délku posílaného slova. Tyto znaky následně pošle do bloku "char_registr", který slouží jako naše paměť(shift regiter),poté přejde do modulu "decoder", kde dojde k rozpoznání písmena na základě počtu jednotlivých znaků a délce slova. Tyto slova jsou následně vyvedena na 7 segmentový displej pro zobrazení.
+![alt text](https://github.com/marek8l/DE1-projekt/blob/main/de1.jpg)
+
 <a name="modules"></a>
 
 ## Software description
