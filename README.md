@@ -56,6 +56,11 @@ https://github.com/marek8l/DE1-projekt/blob/main/vivado_soubory/transmitter/tran
 https://github.com/marek8l/DE1-projekt/blob/main/vivado_soubory/transmitter/transmitter_morse/transmitter_morse.srcs/sources_1/new/decoder.vhd
 ![alt text](https://github.com/marek8l/DE1-projekt/blob/main/diagram_decoder.jpg)
 
+**Modul "receiver"**
+
+https://github.com/marek8l/DE1-projekt/blob/main/vivado_soubory/receiver1/receiver/receiver.srcs/sources_1/new/receiver.vhd
+![alt text](https://github.com/marek8l/DE1-projekt/blob/main/image.jpg)
+
 <a name="simulation"></a>
 
 ## Component(s) simulation
