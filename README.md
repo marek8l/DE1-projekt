@@ -335,6 +335,7 @@ begin
   AN <= b"1111_1110";
 ```
 **Modul "receiver":**
+
 Celý modul je ovládaný pomocí náběžné hrany, program rozhoduje na základě příchozích jedniček a nul. Jsou zde dvě proměnné count_zero a count_one. Count_zero počítá počet po sobě jdoucích nul, pokud napočítá tři, tak se provede podmínka, která ukončí písmeno. Pokud napočítá pět nul, tak se ukončí celé slovo. Cound_one funguje obdobně, když napočítá jednu jedničku, tak podmínka vyhodnotí, že je to tečka. Pokud napočítá tři jedničky, tak se určí, že je to čárka. Tento modul také počítá počet znaků(tečky a čárky) pro rozpoznání písmen. Při mezeře mezi písmeny se vynuluje proměnná length, aby se mohlo začít počítat další písmeno. 
 
 
