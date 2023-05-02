@@ -38,8 +38,8 @@ Přijímač: Celý projekt je opět zabalen v hlavním bloku "top", tady opět d
 ## Software description
 
 ![alt text](https://github.com/marek8l/DE1-projekt/blob/main/inputM%20diagram.jpg)
-![alt text](https://github.com/marek8l/DE1-projekt/blob/main/340962339_1700903987013540_8100612188649537448_n.jpg)
-![alt text](https://github.com/marek8l/DE1-projekt/blob/main/diagram_decoder1.png)
+![alt text](https://github.com/marek8l/DE1-projekt/blob/main/image.jpg)
+![alt text](https://github.com/marek8l/DE1-projekt/blob/main/diagram_decoder.jpg)
 <a name="software"></a>
 
 ## Component(s) simulation
