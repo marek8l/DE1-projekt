@@ -9,14 +9,14 @@
 
 ### Table of contents
 
-* [Project objectives](#objectives)
-* [Hardware description](#hardware)
-* [VHDL modules description and simulations](#modules)
+* [Theoretical description and explanation](#theoretical)
+* [Hardware description of demo application](#hardware)
 * [Software description](#software)
-* [Video](#video)
+* [Component(s) simulation](#simulation)
+* [Instructions](#instructions)
 * [References](#references)
 
-<a name="objectives"></a>
+<a name="#theoretical"></a>
 
 ## Theoretical description and explanation
 
@@ -33,14 +33,14 @@ Vysílač: Celý projekt je zabalen v hlavní bloku "top", kde jsou definovány 
 Přijímač: Celý projekt je opět zabalen v hlavním bloku "top", tady opět definujeme všechny používané signály. Jedinný rozdíl je v našem první bloku "receiver", zde příchází jedničky a nuly signálem DIN, modul poté rozezná, jestli se jedná o tečky nebo čárky, také zjišťuje délku posílaného slova. Tyto znaky následně pošle do bloku "char_registr", který slouží jako naše paměť(shift regiter),poté přejde do modulu "decoder", kde dojde k rozpoznání písmena na základě počtu jednotlivých znaků a délce slova. Tyto slova jsou následně vyvedena na 7 segmentový displej pro zobrazení.
 ![alt text](https://github.com/marek8l/DE1-projekt/blob/main/Receiver.jpg)
 
-<a name="modules"></a>
+<a name="software"></a>
 
 ## Software description
 
 ![alt text](https://github.com/marek8l/DE1-projekt/blob/main/inputM%20diagram.jpg)
 ![alt text](https://github.com/marek8l/DE1-projekt/blob/main/image.jpg)
 ![alt text](https://github.com/marek8l/DE1-projekt/blob/main/diagram_decoder.jpg)
-<a name="software"></a>
+<a name="simulation"></a>
 
 ## Component(s) simulation
 
@@ -320,7 +320,7 @@ begin
 
 end Behavioral;
 
-<a name="video"></a>
+<a name="instructions"></a>
 
 ## Instructions
 
